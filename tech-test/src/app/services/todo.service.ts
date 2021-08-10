@@ -6,6 +6,7 @@ export interface Todo {
   done: boolean;
   edit: boolean;
   toggleEdit: Function;
+  update: Function;
 }
 
 @Injectable({ providedIn: "root" })
@@ -20,6 +21,10 @@ export class TodoService {
       edit: false,
       toggleEdit: function () {
         this.edit = !this.edit;
+      },
+      update: function (value: string) {
+        this.description = value;
+        this.edit = false;
       },
     });
     this.$todoList.next([...todoClone]);

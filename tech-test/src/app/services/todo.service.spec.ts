@@ -14,7 +14,7 @@ describe("TodoService", () => {
   });
 
   describe("$todoList should", () => {
-    it("initialised to an empty todo array ", () => {
+    it("initialised to an empty todo array", () => {
       expect(service.$todoList.value).toEqual([]);
     });
   });
@@ -38,6 +38,28 @@ describe("TodoService", () => {
       service.removeTodo(service.$todoList.value[1]);
       expect(service.$todoList.value.length).toBe(1);
       expect(service.$todoList.value[0].description).toBe("Example");
+    });
+  });
+
+  describe("$todoList.toggleEdit() should", () => {
+    it("toggle the edit property accordingly", () => {
+      service.addNewTodo("Example");
+      const todo = service.$todoList.value[0];
+      expect(todo.edit).toBeFalse();
+      todo.toggleEdit();
+      expect(todo.edit).toBeTruthy();
+      todo.toggleEdit();
+      expect(todo.edit).toBeFalse();
+    });
+  });
+
+  describe("$todoList.update() should", () => {
+    it("update the description property accordingly", () => {
+      service.addNewTodo("Example");
+      const todo = service.$todoList.value[0];
+      expect(todo.description).toBe("Example");
+      todo.update("New value");
+      expect(todo.description).toBe("New value");
     });
   });
 });
