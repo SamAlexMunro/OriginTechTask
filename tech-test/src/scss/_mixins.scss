@@ -1,0 +1,6 @@
+@mixin center-abs($dir: row) {
+  align-items: center;
+  display: flex;
+  flex-direction: $dir;
+  justify-content: center;
+}
