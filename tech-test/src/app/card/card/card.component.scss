@@ -1,7 +1,7 @@
 @use '../../../scss/base';
 
 :host {
-  border-radius: 4px;
+  border-radius: base.$border-radius;
   box-shadow: map-get(base.$box-shadow, default);
   display: block;
   padding: map-get(base.$spacings, m);
