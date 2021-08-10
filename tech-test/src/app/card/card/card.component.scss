@@ -5,4 +5,6 @@
   box-shadow: map-get(base.$box-shadow, default);
   display: block;
   padding: map-get(base.$spacings, m);
+  background-color: map-get(base.$white, 100);
+  border: 1px solid map-get(base.$white, 200);
 }
