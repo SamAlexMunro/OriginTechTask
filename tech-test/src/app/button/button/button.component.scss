@@ -1,0 +1,8 @@
+@use '../../../scss/base';
+
+:host[origin-button],
+:host[origin-anchor] {
+  @include base.active-element-hover(map-get(base.$orange, 200));
+  border-radius: 4px;
+  padding: map-get(base.$spacings, xs) map-get(base.$spacings, s);
+}
