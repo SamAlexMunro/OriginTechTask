@@ -1,9 +1,9 @@
 @use '../../../scss/base';
 
 header {
-  background: map-get(base.$black, 200);
+  background: map-get(base.$white, 100);
   box-shadow: map-get(base.$box-shadow, default);
-  color: map-get(base.$white, 100);
+  color: map-get(base.$black, 100);
   display: block;
   left: 0;
   padding: map-get(base.$spacings, m);
