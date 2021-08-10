@@ -3,6 +3,7 @@
 :host[origin-button],
 :host[origin-anchor] {
   @include base.active-element-hover(map-get(base.$orange, 200));
+  @include base.flex-center();
   border-radius: base.$border-radius;
   padding: map-get(base.$spacings, xs) map-get(base.$spacings, s);
 }
