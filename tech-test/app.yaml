@@ -1,0 +1,11 @@
+runtime: python27
+threadsafe: true
+api_version: 1
+
+handlers:
+- url: /(.*\.(gif|png|jpeg|jpg|css|js|svg|txt))$
+  static_files: tech-test/\1
+  upload: tech-test/(.*)
+- url: /(.*)
+  static_files: tech-test/index.html
+  upload: tech-test/index.html
