@@ -1,6 +1,17 @@
-@mixin center-abs($dir: row) {
+@mixin flex-center($dir: row) {
   align-items: center;
   display: flex;
   flex-direction: $dir;
   justify-content: center;
+}
+
+@mixin active-element-hover($color) {
+  background: linear-gradient(120deg, transparent 0%, transparent 50%, $color 50%);
+  background-size: 245%;
+  transition: all 0.25s linear;
+
+  &:hover {
+    background-position: 99%;
+    cursor: pointer;
+  }
 }
