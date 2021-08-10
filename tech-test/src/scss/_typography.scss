@@ -1,0 +1,18 @@
+$font-size: (
+  'xs': 12px,
+  's': 14px,
+  'm': 16px,
+  'l': 18px,
+  'xl': 22px,
+);
+
+$roboto-mono: 'Roboto Mono', monospace;
+$courier: 'Courier New', Courier, monospace;
+
+.roboto-mobo {
+  font-family: $roboto-mono;
+}
+
+.courier {
+  font-family: $courier;
+}
