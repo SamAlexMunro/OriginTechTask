@@ -1,0 +1,17 @@
+@use '../../../scss/base';
+
+header {
+  background: map-get(base.$black, 200);
+  box-shadow: map-get(base.$box-shadow, default);
+  color: map-get(base.$white, 100);
+  display: block;
+  left: 0;
+  padding: map-get(base.$spacings, m);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.title {
+  font-size: map-get(base.$font-size, l);
+}
