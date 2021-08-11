@@ -1,0 +1,5 @@
+@use '../../../scss/base';
+
+.title {
+  margin: map-get(base.$spacings, l) 0 map-get(base.$spacings, s);
+}

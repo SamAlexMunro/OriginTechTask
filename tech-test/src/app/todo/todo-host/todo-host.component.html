@@ -1,3 +1,12 @@
 <app-card>
   <app-todo-utility-bar></app-todo-utility-bar>
+
+  <ng-container *ngIf="$todoList | async as todoList">
+    <h1 class="origin-title title">Current todo list</h1>
+    <p *ngIf="todoList.length === 0">
+      Currently nothing in your todo list why dont you add one!
+    </p>
+    <app-todo-item [todoItem]="todoItem" *ngFor="let todoItem of todoList">
+    </app-todo-item>
+  </ng-container>
 </app-card>
