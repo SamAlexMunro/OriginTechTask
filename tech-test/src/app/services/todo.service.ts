@@ -1,7 +1,5 @@
-import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, Observable } from "rxjs";
-import { map, mergeMap, take } from "rxjs/operators";
+import { BehaviorSubject } from "rxjs";
 
 export interface Todo {
   description: string;
@@ -70,49 +68,49 @@ export class TodoService {
    * I'd add a catchError observable handler into this.
    */
 
-  URL = `http://localhost:3000/tasks`;
-  readonly $todoListHttp = new BehaviorSubject<TodoAlt[]>([]);
+  // URL = `http://localhost:3000/tasks`;
+  // readonly $todoListHttp = new BehaviorSubject<TodoAlt[]>([]);
 
-  constructor(private readonly http: HttpClient) {
-    this.getTodoItems().pipe(take(1)).subscribe();
-  }
+  // constructor(private readonly http: HttpClient) {
+  //   this.getTodoItems().pipe(take(1)).subscribe();
+  // }
 
-  getTodoItems(): Observable<void> {
-    return this.http.get(this.URL).pipe(
-      take(1),
-      map((data) => {
-        this.$todoListHttp.next([...(data as [])]);
-      })
-    );
-  }
+  // getTodoItems(): Observable<void> {
+  //   return this.http.get(this.URL).pipe(
+  //     take(1),
+  //     map((data) => {
+  //       this.$todoListHttp.next([...(data as [])]);
+  //     })
+  //   );
+  // }
 
-  addNewTodoItem(todoItem: TodoAlt): void {
-    this.http
-      .post(this.URL, todoItem)
-      .pipe(
-        take(1),
-        mergeMap(() => this.getTodoItems())
-      )
-      .subscribe();
-  }
+  // addNewTodoItem(todoItem: TodoAlt): void {
+  //   this.http
+  //     .post(this.URL, todoItem)
+  //     .pipe(
+  //       take(1),
+  //       mergeMap(() => this.getTodoItems())
+  //     )
+  //     .subscribe();
+  // }
 
-  updateTodoItem(newTodoItem: TodoAlt, id: string | number): void {
-    this.http
-      .patch(`${this.URL}/${id}`, newTodoItem)
-      .pipe(
-        take(1),
-        mergeMap(() => this.getTodoItems())
-      )
-      .subscribe();
-  }
+  // updateTodoItem(newTodoItem: TodoAlt, id: string | number): void {
+  //   this.http
+  //     .patch(`${this.URL}/${id}`, newTodoItem)
+  //     .pipe(
+  //       take(1),
+  //       mergeMap(() => this.getTodoItems())
+  //     )
+  //     .subscribe();
+  // }
 
-  deleteTodoItem(id: string | number): void {
-    this.http
-      .delete(`${this.URL}/${id}`)
-      .pipe(
-        take(1),
-        mergeMap(() => this.getTodoItems())
-      )
-      .subscribe();
-  }
+  // deleteTodoItem(id: string | number): void {
+  //   this.http
+  //     .delete(`${this.URL}/${id}`)
+  //     .pipe(
+  //       take(1),
+  //       mergeMap(() => this.getTodoItems())
+  //     )
+  //     .subscribe();
+  // }
 }
