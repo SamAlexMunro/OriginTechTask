@@ -1,0 +1,26 @@
+@use '../../../scss/base';
+
+:host {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+.buttons {
+  display: flex;
+  margin: auto 0 0 0;
+}
+
+.cancel-button {
+  margin: 0 map-get(base.$spacings, m) 0;
+}
+
+textarea {
+  resize: vertical;
+  width: 100%;
+  margin-right: map-get(base.$spacings, m);
+}
