@@ -14,6 +14,11 @@ body {
   position: relative;
   width: 100%;
   font-family: base.$roboto-mono;
+  font-size: map-get(base.$font-size, xs);
+
+  @include base.breakpoint(600px) {
+    font-size: map-get(base.$font-size, m);
+  }
 }
 
 button {
@@ -51,7 +56,8 @@ h1 {
 }
 
 .origin-title {
-  font-family: base.$courier;
+  font-family: base.$roboto-mono;
   color: map-get(base.$black, 200);
   margin-bottom: map-get(base.$spacings, s);
+  font-size: map-get(base.$font-size, l);
 }
