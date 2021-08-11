@@ -7,6 +7,7 @@ export interface Todo {
   edit: boolean;
   toggleEdit: Function;
   update: Function;
+  markAsDone: Function;
 }
 
 @Injectable({ providedIn: "root" })
@@ -14,6 +15,7 @@ export class TodoService {
   readonly $todoList = new BehaviorSubject<Todo[]>([]);
 
   addNewTodo(description: string): void {
+    console.log(description);
     const todoClone = [...this.$todoList.value];
     todoClone.push({
       description,
@@ -25,6 +27,9 @@ export class TodoService {
       update: function (value: string) {
         this.description = value;
         this.edit = false;
+      },
+      markAsDone: function () {
+        this.done = !this.done;
       },
     });
     this.$todoList.next([...todoClone]);

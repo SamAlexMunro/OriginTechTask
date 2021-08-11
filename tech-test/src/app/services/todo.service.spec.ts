@@ -62,4 +62,16 @@ describe("TodoService", () => {
       expect(todo.description).toBe("New value");
     });
   });
+
+  describe("$todoList.markAsDone() should", () => {
+    it("toggle the done property accordingly", () => {
+      service.addNewTodo("Example");
+      const todo = service.$todoList.value[0];
+      expect(todo.done).toBeFalse();
+      todo.markAsDone();
+      expect(todo.done).toBeTruthy();
+      todo.markAsDone();
+      expect(todo.done).toBeFalse();
+    });
+  });
 });
