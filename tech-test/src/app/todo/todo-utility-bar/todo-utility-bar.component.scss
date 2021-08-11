@@ -1,0 +1,34 @@
+@use '../../../scss/base';
+
+:host {
+  display: flex;
+}
+
+.filter-container {
+  position: relative;
+  width: fit-content;
+  width: 40%;
+}
+
+.filter-input {
+  width: 100%;
+}
+
+.filter-icon {
+  fill: map-get(base.$black, 200);
+  height: 24px;
+  position: absolute;
+  right: map-get(base.$spacings, xs);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+}
+
+.new-todo {
+  margin-left: auto;
+}
+
+.add-icon {
+  height: 16px;
+  width: 24px;
+}

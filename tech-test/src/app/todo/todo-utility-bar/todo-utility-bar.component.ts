@@ -6,4 +6,10 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
   styleUrls: ["./todo-utility-bar.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TodoUtilityBarComponent {}
+export class TodoUtilityBarComponent {
+  addNewTodoPaneVisible = false;
+
+  toggleAddNewTodo(): void {
+    this.addNewTodoPaneVisible = !this.addNewTodoPaneVisible;
+  }
+}
