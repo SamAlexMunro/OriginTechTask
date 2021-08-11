@@ -24,7 +24,8 @@
 </div>
 
 <div *ngIf="todoItem.edit" class="row">
-  <input [value]="todoItem.description"
+  <input (keyup.enter)="todoItem.update(newValue.value)"
+         [value]="todoItem.description"
          #newValue
          class="origin-input edit-input"
          type="text" />

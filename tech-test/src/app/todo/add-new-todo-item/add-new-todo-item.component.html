@@ -1,6 +1,7 @@
 <h1 class="origin-title">Add new todo</h1>
 <div class="row">
-  <textarea #newValue
+  <textarea (keyup.enter)="addNewTodo(newValue.value)"
+            #newValue
             class="origin-input"
             placeholder="Todo description"
             rows="1">

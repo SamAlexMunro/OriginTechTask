@@ -3,3 +3,11 @@
 .title {
   margin: map-get(base.$spacings, l) 0 map-get(base.$spacings, s);
 }
+
+app-todo-item {
+  margin-bottom: map-get(base.$spacings, m);
+
+  &:last-child {
+    margin-bottom: unset;
+  }
+}
