@@ -1,19 +1,23 @@
-<ng-container *ngIf="!addNewTodoPaneVisible">
+<div [class.hidden]="!!addNewTodoPaneVisible" class="row">
   <div class="filter-container">
-    <input class="filter-input origin-input"
+    <input #filter
+           class="filter-input origin-input"
            placeholder="Filter todos"
            type="text" />
     <svg class="filter-icon" role="img">
       <use xlink:href="assets/icons.svg#search" />
     </svg>
   </div>
-  <button (click)="toggleAddNewTodo()" class="new-todo" origin-button>
+  <button (click)="toggleAddNewTodo(); filter.value = ''"
+          class="new-todo"
+          origin-button>
     Add new todo
     <svg class="add-icon" role="img">
       <use xlink:href="assets/icons.svg#add" />
     </svg>
   </button>
-</ng-container>
+</div>
+
 <app-add-new-todo-item (closePane)="toggleAddNewTodo()"
                        *ngIf="addNewTodoPaneVisible">
 </app-add-new-todo-item>

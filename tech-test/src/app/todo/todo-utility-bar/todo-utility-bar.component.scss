@@ -4,6 +4,15 @@
   display: flex;
 }
 
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
 .filter-container {
   position: relative;
   width: fit-content;
