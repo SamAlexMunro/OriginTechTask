@@ -1,0 +1,11 @@
+@use '../scss/base';
+
+.router-view {
+  padding: 80px map-get(base.$spacings, m);
+  height: 100%;
+  margin: 0 auto;
+  max-width: base.$max-width;
+  overflow: auto;
+  position: relative;
+  width: 100%;
+}
