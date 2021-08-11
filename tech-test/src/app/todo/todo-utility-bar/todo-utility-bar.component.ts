@@ -39,6 +39,10 @@ export class TodoUtilityBarComponent implements OnDestroy {
       });
   }
 
+  clearFilter() {
+    this.todoService.filterList("");
+  }
+
   ngOnDestroy(): void {
     this.destroy$.next();
   }

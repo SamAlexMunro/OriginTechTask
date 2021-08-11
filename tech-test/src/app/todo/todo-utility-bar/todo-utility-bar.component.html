@@ -8,7 +8,7 @@
       <use xlink:href="assets/icons.svg#search" />
     </svg>
   </div>
-  <button (click)="toggleAddNewTodo(); filter.value = ''"
+  <button (click)="toggleAddNewTodo(); clearFilter(); filter.value = ''"
           class="new-todo"
           origin-button>
     Add new todo
