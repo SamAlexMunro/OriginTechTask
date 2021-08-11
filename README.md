@@ -1,8 +1,8 @@
-##TechTest
+# TechTest
 
 This project was part of Origins technical test - https://github.com/OriginMarkets/angular8TechnicalTest
 
-##Setup
+# Setup
 
 1 - run npm install
 
