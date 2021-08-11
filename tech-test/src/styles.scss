@@ -42,3 +42,16 @@ h1 {
   border: solid 3px transparent;
   box-shadow: inset 0 0 10px 10px currentColor;
 }
+
+.origin-input {
+  border-radius: base.$border-radius;
+  border: 1px solid map-get(base.$black, 100);
+  padding: map-get(base.$spacings, xs) map-get(base.$spacings, s) map-get(base.$spacings, xs)
+    map-get(base.$spacings, xs);
+}
+
+.origin-title {
+  font-family: base.$courier;
+  color: map-get(base.$black, 200);
+  margin-bottom: map-get(base.$spacings, s);
+}
