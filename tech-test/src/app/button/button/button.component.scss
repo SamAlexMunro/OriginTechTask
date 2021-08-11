@@ -4,6 +4,7 @@
   @include base.active-element-hover($colour);
   @include base.flex-center();
   border-radius: base.$border-radius;
+  height: fit-content;
   padding: map-get(base.$spacings, xs) map-get(base.$spacings, s);
 }
 
