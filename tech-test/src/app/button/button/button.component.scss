@@ -6,6 +6,7 @@
   border-radius: base.$border-radius;
   height: fit-content;
   padding: map-get(base.$spacings, xs) map-get(base.$spacings, s);
+  border: 1px solid $colour;
 }
 
 :host {
