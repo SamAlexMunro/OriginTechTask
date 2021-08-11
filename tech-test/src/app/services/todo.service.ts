@@ -13,9 +13,9 @@ export interface Todo {
 @Injectable({ providedIn: "root" })
 export class TodoService {
   readonly $todoList = new BehaviorSubject<Todo[]>([]);
+  private readonly $todoList_ = new BehaviorSubject<Todo[]>([]);
 
   addNewTodo(description: string): void {
-    console.log(description);
     const todoClone = [...this.$todoList.value];
     todoClone.push({
       description,
@@ -33,11 +33,22 @@ export class TodoService {
       },
     });
     this.$todoList.next([...todoClone]);
+    this.$todoList_.next([...todoClone]);
   }
 
   removeTodo(todo: Todo): void {
     const todoClone = [...this.$todoList.value];
     todoClone.splice(todoClone.indexOf(todo), 1);
     this.$todoList.next([...todoClone]);
+    this.$todoList_.next([...todoClone]);
+  }
+
+  filterList(filterBy: string): void {
+    const todoClone = [...this.$todoList_.value];
+    this.$todoList.next([
+      ...todoClone.filter((todoItem) =>
+        todoItem.description.toLowerCase().includes(filterBy.toLowerCase())
+      ),
+    ]);
   }
 }
