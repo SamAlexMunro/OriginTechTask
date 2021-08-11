@@ -3,18 +3,24 @@
     {{todoItem.description}}
   </p>
   <div class="buttons">
-    <button (click)="removeTodo(todoItem)" origin-button-cancel>
+    <button (click)="removeTodo(todoItem)"
+            aria-label="Delete todo item"
+            origin-button-cancel>
       <svg class="icon" role="img">
         <use xlink:href="assets/icons.svg#delete-bin" />
       </svg>
     </button>
-    <button (click)="todoItem.toggleEdit()" class="edit-button" origin-button>
+    <button (click)="todoItem.toggleEdit()"
+            aria-label="Edit todo item"
+            class="edit-button"
+            origin-button>
       <svg class="icon" role="img">
         <use xlink:href="assets/icons.svg#pencil-edit" />
       </svg>
     </button>
     <button (click)="todoItem.markAsDone()"
             [class.done-button]="todoItem.done"
+            aria-label="Mark todo item as done"
             origin-button-confirm>
       <svg class="icon" role="img">
         <use xlink:href="assets/icons.svg#check-box" />
