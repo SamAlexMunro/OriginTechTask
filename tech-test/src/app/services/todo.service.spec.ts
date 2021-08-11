@@ -74,4 +74,15 @@ describe("TodoService", () => {
       expect(todo.done).toBeFalse();
     });
   });
+
+  describe("filterList should", () => {
+    it("filter the list accordingly", () => {
+      service.addNewTodo("Example");
+      expect(service.$todoList.value.length).toBe(1);
+      service.filterList("Test");
+      expect(service.$todoList.value.length).toBe(0);
+      service.filterList("");
+      expect(service.$todoList.value.length).toBe(1);
+    });
+  });
 });
