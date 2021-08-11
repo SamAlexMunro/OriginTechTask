@@ -1,9 +1,25 @@
 @use '../../../scss/base';
 
-:host[origin-button],
-:host[origin-anchor] {
-  @include base.active-element-hover(map-get(base.$orange, 200));
+@mixin base-button($colour: map-get(base.$orange, 200)) {
+  @include base.active-element-hover($colour);
   @include base.flex-center();
   border-radius: base.$border-radius;
   padding: map-get(base.$spacings, xs) map-get(base.$spacings, s);
+}
+
+:host {
+  &[origin-anchor],
+  &[origin-button] {
+    @include base-button();
+  }
+
+  &[origin-button-confirm] {
+    @include base-button(map-get(base.$green, 100));
+    border: 1px solid map-get(base.$green, 100);
+  }
+
+  &[origin-button-cancel] {
+    @include base-button(map-get(base.$red, 100));
+    border: 1px solid map-get(base.$red, 100);
+  }
 }
