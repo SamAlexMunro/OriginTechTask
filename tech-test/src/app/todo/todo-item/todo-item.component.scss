@@ -1,0 +1,63 @@
+@use '../../../scss/base';
+
+:host {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.icon {
+  height: 16px;
+  width: 16px;
+
+  @include base.breakpoint(600px) {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.row {
+  align-items: center;
+  display: flex;
+  width: 100%;
+  // flex-wrap: wrap;
+}
+
+.description {
+  overflow-wrap: break-word;
+  max-width: 50%;
+
+  @include base.breakpoint(600px) {
+    max-width: 58%;
+  }
+}
+
+.buttons {
+  display: flex;
+  margin-left: auto;
+}
+
+.edit-button {
+  margin: 0 map-get(base.$spacings, s);
+}
+
+.edit-input {
+  max-width: 50%;
+
+  @include base.breakpoint(600px) {
+    max-width: 58%;
+  }
+}
+
+.done {
+  text-decoration: line-through;
+  color: map-get(base.$black, 100);
+}
+
+.done-button {
+  background: map-get(base.$green, 100);
+}
+
+.cancel-button {
+  margin-right: map-get(base.$spacings, s);
+}

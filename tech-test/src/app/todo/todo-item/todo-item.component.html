@@ -1,1 +1,41 @@
-<p>todo-item works!</p>
+<div *ngIf="!todoItem.edit" class="row">
+  <p [class.done]="todoItem.done" class="description">
+    {{todoItem.description}}
+  </p>
+  <div class="buttons">
+    <button (click)="removeTodo(todoItem)" origin-button-cancel>
+      <svg class="icon" role="img">
+        <use xlink:href="assets/icons.svg#delete-bin" />
+      </svg>
+    </button>
+    <button (click)="todoItem.toggleEdit()" class="edit-button" origin-button>
+      <svg class="icon" role="img">
+        <use xlink:href="assets/icons.svg#pencil-edit" />
+      </svg>
+    </button>
+    <button (click)="todoItem.markAsDone()"
+            [class.done-button]="todoItem.done"
+            origin-button-confirm>
+      <svg class="icon" role="img">
+        <use xlink:href="assets/icons.svg#check-box" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div *ngIf="todoItem.edit" class="row">
+  <input [value]="todoItem.description"
+         #newValue
+         class="origin-input edit-input"
+         type="text" />
+  <div class="buttons">
+    <button (click)="todoItem.toggleEdit()"
+            class="cancel-button"
+            origin-button-cancel>
+      Cancel
+    </button>
+    <button (click)="todoItem.update(newValue.value)" origin-button-confirm>
+      Confirm
+    </button>
+  </div>
+</div>
