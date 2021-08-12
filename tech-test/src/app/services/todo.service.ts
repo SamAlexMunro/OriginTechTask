@@ -60,14 +60,6 @@ export class TodoService {
     ]);
   }
 
-  /**
-   * My apologies for some reason I overlooked the server side, and only noticed
-   * it when I went back and updated the readme at the end. Hopefully the
-   * code below and above will still suffice and give a decent representaion
-   * on how I'd handle dealing with the HTTP requests, given more time
-   * I'd add a catchError observable handler into this.
-   */
-
   // URL = `http://localhost:3000/tasks`;
   // readonly $todoListHttp = new BehaviorSubject<TodoAlt[]>([]);
 
