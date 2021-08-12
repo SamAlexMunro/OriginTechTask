@@ -1,17 +1,23 @@
 <h1 class="origin-title">Add new todo</h1>
-<div class="row">
-  <textarea (keyup.enter)="addNewTodo(newValue.value)"
-            #newValue
-            class="origin-input"
-            placeholder="Todo description"
-            rows="1">
-  </textarea>
+<form (ngSubmit)="addNewTodo(todo.value)" [formGroup]="todoForm" class="row">
+  <div class="input-box">
+    <textarea (keyup.enter)="addNewTodo(todo.value)"
+              [class.textarea-error]="todoRequiredError()"
+              class="origin-input"
+              formControlName="todo"
+              placeholder="Todo description"
+              required
+              rows="1">
+    </textarea>
+    <div *ngIf="todoRequiredError()" class="form-error">Todo is required.</div>
+  </div>
+
   <div class="buttons">
     <button (click)="cancel()" class="cancel-button" origin-button-cancel>
       Cancel
     </button>
-    <button (click)="addNewTodo(newValue.value)" origin-button-confirm>
+    <button [disabled]="todoForm.invalid" origin-button-confirm type="submit">
       Confirm
     </button>
   </div>
-</div>
+</form>

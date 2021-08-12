@@ -12,15 +12,42 @@
 
 .buttons {
   display: flex;
-  margin: auto 0 0 0;
+  margin: auto 0 0;
 }
 
 .cancel-button {
   margin: 0 map-get(base.$spacings, m) 0;
 }
 
+.form-error {
+  background: map-get(base.$white, 100);
+  border-radius: base.$border-radius;
+  color: map-get(base.$red, 100);
+  font-size: map-get(base.$font-size, xs);
+  font-weight: bold;
+  left: 2px;
+  margin-top: map-get(base.$spacings, xs);
+  padding: 0 map-get(base.$spacings, xs);
+  position: absolute;
+  top: -18px;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: map-get(base.$spacings, xs);
+  position: relative;
+  width: 100%;
+}
+
 textarea {
+  height: 32px;
+  margin-right: map-get(base.$spacings, m);
+  padding-top: 7px;
   resize: vertical;
   width: 100%;
-  margin-right: map-get(base.$spacings, m);
+}
+
+.textarea-error {
+  border-color: map-get(base.$red, 100);
 }
