@@ -7,6 +7,10 @@
   height: fit-content;
   padding: map-get(base.$spacings, xs) map-get(base.$spacings, s);
   border: 1px solid $colour;
+
+  &[disabled] {
+    background: map-get(base.$black, 100);
+  }
 }
 
 :host {
@@ -18,6 +22,12 @@
   &[origin-button-confirm] {
     @include base-button(map-get(base.$green, 100));
     border: 1px solid map-get(base.$green, 100);
+
+    &[disabled] {
+      border-color: map-get(base.$black, 200);
+      color: map-get(base.$black, 200);
+      cursor: not-allowed;
+    }
   }
 
   &[origin-button-cancel] {
