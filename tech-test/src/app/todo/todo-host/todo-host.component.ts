@@ -9,5 +9,10 @@ import { TodoService } from "./../../services/todo.service";
 })
 export class TodoHostComponent {
   readonly $todoList = this.todoService.$todoList;
+  filtering = false;
   constructor(private readonly todoService: TodoService) {}
+
+  updateFilteringProperty(filtering: boolean) {
+    this.filtering = filtering;
+  }
 }

@@ -1,11 +1,13 @@
 <app-card>
-  <app-todo-utility-bar></app-todo-utility-bar>
+  <app-todo-utility-bar (filtering)="updateFilteringProperty($event)">
+  </app-todo-utility-bar>
 
   <ng-container *ngIf="$todoList | async as todoList">
     <h1 class="origin-title title">Current todo list</h1>
-    <p *ngIf="todoList.length === 0">
+    <p *ngIf="todoList.length === 0 && !filtering">
       Currently nothing in your todo list why dont you add one!
     </p>
+    <p *ngIf="todoList.length === 0 && filtering">No results</p>
     <app-todo-item [todoItem]="todoItem" *ngFor="let todoItem of todoList">
     </app-todo-item>
   </ng-container>
