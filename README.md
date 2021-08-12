@@ -1,6 +1,14 @@
 # TechTest
 
-This project was part of Origins technical test - https://github.com/OriginMarkets/angular8TechnicalTest
+This project was part of Origins technical test 
+
+The basic spec was as follows 
+
+- 3 Hour timebox
+- Create a TODO app with the following functionality;
+ - Add/Edit/Delete todo items
+ - Mark todo item as done
+ - Ability to filter items
 
 # Setup
 
@@ -8,8 +16,6 @@ This project was part of Origins technical test - https://github.com/OriginMarke
 
 2 - run `npm install`
 
-3 - run `npm run server`
-
-4 - run `npm start`
+3 - run `npm start`
 
 Alternatively view the project live at - https://1-dot-origintechtask.ew.r.appspot.com
